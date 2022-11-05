@@ -1,0 +1,86 @@
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-weight: 700;
+    font-size: 2rem;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contactWrapper {
+    max-width: 560px;
+    margin: 4rem auto 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    background: #fff;
+    padding: 2rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(192, 193, 228, 0.1);
+}
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+.subTitle {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #888;
+    word-break: keep-all;
+    line-height: 1.3;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ddd;
+}
+.label {
+    font-weight: 600;
+    color: #000;
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+}
+
+.contactItem input {
+    width: 100%;
+    padding: 0 1em;
+    border: 1px solid #ddd;
+    height: 4rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.contactTextarea {
+}
+
+.contactTextarea textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 18rem;
+    resize: none;
+    padding: 1em;
+}
+
+.contactBtn {
+    width: 100%;
+    background: #5c16c5;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    font-size: 1.7rem;
+    border-radius: 4px;
+}
