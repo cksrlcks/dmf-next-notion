@@ -56,9 +56,11 @@
     height: 4rem;
     border-radius: 5px;
     overflow: hidden;
+    font-size: inherit;
 }
 
 .contactTextarea {
+    font-size: inherit;
 }
 
 .contactTextarea textarea {

@@ -17,6 +17,7 @@ function getColorName(string) {
 }
 
 export default function MenuItem({ product, styles }) {
+    console.log(product);
     return (
         <li className={styles["list-item"]}>
             <Link href={`/menu/${product.id}`}>
@@ -30,7 +31,7 @@ export default function MenuItem({ product, styles }) {
                         );
                     })}
                 </div>
-                <figure className={styles["item-img"]}>
+                <figure className={`${styles["item-img"]} ${product.properties.sold_out.status.name === "품절" ? styles.soldOut : ""}`}>
                     {product.properties.cover_img?.files?.length ? (
                         <img src={product.properties.cover_img.files[0]?.file.url} alt="" />
                     ) : (
