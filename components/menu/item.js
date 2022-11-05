@@ -30,7 +30,6 @@ export default function MenuItem({ product, styles }) {
             <Link href={`/menu/${product.id}`}>
                 <div className={styles["item-badge"]}>
                     {product.properties.badge?.multi_select?.map((badge) => {
-                        console.log(badge.name);
                         return (
                             <span key={badge.id} className={`${styles.badge} ${styles[getColorName(badge.name)]}`}>
                                 {badge.name}

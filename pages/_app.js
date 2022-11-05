@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
     };
     useEffect(() => {
         const initalTime = localStorage.getItem("dmfShowPlayTime");
-        setAutoTime(initalTime);
+        setAutoTime(initalTime ? initalTime : 2000);
     }, []);
     return (
         <>
