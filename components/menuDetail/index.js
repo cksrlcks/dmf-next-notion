@@ -5,18 +5,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faPaw } from "@fortawesome/free-solid-svg-icons";
 export default function Detail({ item }) {
     const router = useRouter();
+
     function getColorName(string) {
         if (!string) return "";
+        let badgeString = "";
         switch (string) {
-            case "인기":
-                return "popular";
             case "추천":
-                return "recommend";
+                badgeString = "rec";
+                break;
+            case "인기":
+                badgeString = "popular";
+                break;
             case "신규":
-                return "new";
+                badgeString = "new";
+                break;
+            case "온라인전용":
+                badgeString = "online";
+                break;
             default:
-                return "";
+                badgeString = "";
         }
+        return badgeString;
     }
 
     return (

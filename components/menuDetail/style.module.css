@@ -129,9 +129,12 @@
 .badge.popular {
     background: rgb(0, 89, 255);
 }
-.badge.recommand {
+.badge.rec {
     background: #5c16c5;
 }
 .badge.new {
     background: rgb(216, 32, 109);
+}
+.badge.online {
+    background: #03c75a;
 }

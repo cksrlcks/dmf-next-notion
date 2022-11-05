@@ -2,6 +2,7 @@
     display: flex;
     gap: 6rem 2rem;
     flex-wrap: wrap;
+    padding-bottom: 10rem;
 }
 .list-item {
     transition: width 0.2s;
@@ -15,7 +16,9 @@
     top: 1rem;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 4px;
+    z-index: 1;
 }
 
 .badge {
@@ -23,7 +26,7 @@
     background: #000;
     height: 2.8rem;
     line-height: 2.8rem;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     color: #fff;
     font-size: 1.3rem;
@@ -33,11 +36,14 @@
 .badge.popular {
     background: rgb(0, 89, 255);
 }
-.badge.recommand {
-    background: #5c16c5;
+.badge.rec {
+    background: rgb(216, 32, 109);
 }
 .badge.new {
-    background: rgb(216, 32, 109);
+    background: #5c16c5;
+}
+.badge.online {
+    background: #03c75a;
 }
 
 .item-img {
