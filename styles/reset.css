@@ -125,9 +125,6 @@ i {
 p {
     line-height: inherit;
 }
-html {
-    -webkit-text-size-adjust: 100%;
-}
 img {
     vertical-align: top;
 }
