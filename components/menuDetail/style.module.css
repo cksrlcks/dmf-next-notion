@@ -1,7 +1,7 @@
 .productView {
     display: flex;
     width: calc(100% + 4rem);
-    height: calc(100% + 4rem);
+    height: 100vh;
     align-items: stretch;
     margin: -2rem -2rem;
 }
@@ -123,6 +123,9 @@
 }
 
 @media screen and (max-width: 1023px) {
+    .productView {
+        height: 100%;
+    }
     .viewLeft {
         display: none;
     }
