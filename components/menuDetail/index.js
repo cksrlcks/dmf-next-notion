@@ -1,33 +1,11 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styles from "./style.module.css";
+import Badge from "../badge";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faPaw } from "@fortawesome/free-solid-svg-icons";
+import styles from "./style.module.css";
 export default function Detail({ item }) {
     const router = useRouter();
-
-    function getColorName(string) {
-        if (!string) return "";
-        let badgeString = "";
-        switch (string) {
-            case "추천":
-                badgeString = "rec";
-                break;
-            case "인기":
-                badgeString = "popular";
-                break;
-            case "신규":
-                badgeString = "new";
-                break;
-            case "온라인전용":
-                badgeString = "online";
-                break;
-            default:
-                badgeString = "";
-        }
-        return badgeString;
-    }
-
     return (
         <div className={styles.productView}>
             <div className={styles.viewLeft}>
@@ -44,16 +22,19 @@ export default function Detail({ item }) {
                     <FontAwesomeIcon icon={faArrowLeft} />
                 </button>
                 <section className={styles.productSummary}>
+                    <section className={styles.mobileImg}>
+                        {item.properties.cover_img?.files?.length ? (
+                            <img src={item.properties.cover_img.files[0]?.file.url} alt="" />
+                        ) : (
+                            <div className={styles["no-img"]}>
+                                <FontAwesomeIcon icon={faPaw} />
+                            </div>
+                        )}
+                    </section>
                     <div className={styles.itemBadge}>
-                        {item.properties.badge?.multi_select?.map((badge) => {
-                            const colorName = getColorName(badge.name);
-                            return (
-                                <span key={badge.id} className={`${styles.badge} ${styles[colorName]}`}>
-                                    {badge.name}
-                                </span>
-                            );
-                        })}
+                        <Badge badges={item.properties.badge?.multi_select} />
                     </div>
+
                     <div className={styles.category}>{item.properties.category.select?.name}</div>
                     <div className={styles.title}>{item.properties.menu_name.title[0]?.plain_text}</div>
                     <div className={styles.content}>{item.properties.menu_description.rich_text[0].plain_text}</div>

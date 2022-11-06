@@ -29,8 +29,31 @@ const LayoutBlock = styled.div`
     }
     .app-container {
         margin-left: 8rem;
-        background: #f8f9fa;
         height: 100%;
         padding: 2rem;
+    }
+
+    @media screen and (max-width: 1023px) {
+        .app-nav {
+            left: 0;
+            top: auto;
+            bottom: 0;
+            width: 100%;
+            height: 5.6rem;
+            height: calc(5.6rem + constant(safe-area-inset-bottom));
+            height: calc(5.6rem + env(safe-area-inset-bottom));
+            z-index: 9;
+            border-top: 1px solid #ddd;
+        }
+        .app-container {
+            margin-left: 0;
+            padding: 2rem;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .app-container {
+            padding: 2rem 1rem;
+        }
     }
 `;

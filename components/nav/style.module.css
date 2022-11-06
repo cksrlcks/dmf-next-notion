@@ -6,6 +6,7 @@
     width: 100%;
     height: 100%;
     padding: 2rem 0;
+    padding: 2rem 0;
 }
 .nav .setting,
 .nav .store {
@@ -52,4 +53,20 @@
 .nav ul li a.active {
     opacity: 1;
     color: #000;
+}
+
+@media screen and (max-width: 1023px) {
+    .nav {
+        flex-direction: row;
+        padding: 0 2rem calc(constant(safe-area-inset-bottom));
+        padding: 0 2rem calc(env(safe-area-inset-bottom));
+    }
+    .nav ul {
+        flex-direction: row;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav ul {
+        gap: 2.8rem;
+    }
 }

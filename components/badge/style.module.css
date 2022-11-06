@@ -1,0 +1,24 @@
+.badge {
+    border-radius: 0 9999px 9999px 0;
+    background: #000;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 0 1em 0 0.8em;
+}
+.badge.popular {
+    background: rgb(0, 89, 255);
+}
+.badge.rec {
+    background: #5c16c5;
+}
+.badge.new {
+    background: rgb(216, 32, 109);
+}
+.badge.online {
+    background: #03c75a;
+}
