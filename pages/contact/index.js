@@ -71,7 +71,8 @@ export default function ContactPage() {
                 setLoading(false);
             }, 1000);
         } else {
-            console.log("문의보내기를 실패했습니다.");
+            alert("문의보내기를 실패했습니다.");
+            setLoading(false);
         }
     };
     return (

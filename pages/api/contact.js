@@ -1,4 +1,4 @@
-import { CONTACT_DATABSE_ID, createContact } from "../../lib/notion";
+import { createContact } from "../../lib/notion";
 
 export default async function handler(req, res) {
     if (req.method !== "POST") {

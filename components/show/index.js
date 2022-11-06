@@ -8,7 +8,6 @@ function shuffle(array) {
 }
 
 export default function Show({ menu, autoTime }) {
-    console.log(autoTime);
     return (
         <div className={styles.slideWrapper}>
             <Swiper modules={[Autoplay, EffectFade]} autoplay={{ delay: autoTime }} effect={"fade"} allowTouchMove={false}>

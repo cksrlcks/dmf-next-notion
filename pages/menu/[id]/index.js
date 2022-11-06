@@ -1,29 +1,19 @@
+import useDatabase from "../../../hook/useDatabase";
 import Detail from "../../../components/menuDetail";
-import { getDatabase, MENU_DATABASE_ID } from "../../../lib/notion";
 
-export default function DetailView({ data }) {
-    return <Detail item={data[0]} />;
+export default function DetailView({ params }) {
+    const { id } = params;
+    const { data, loading, error } = useDatabase(`/api/menu/${id.replace(/\-/g, "")}`);
+    if (loading) {
+        return <div className="super-loading">정보를 가져오고 있습니다.</div>;
+    } else {
+        if (data.length) {
+            return <Detail item={data[0]} />;
+        }
+    }
 }
-
-export async function getServerSideProps(context) {
-    const response = await getDatabase(MENU_DATABASE_ID, {
-        filter: {
-            or: [
-                {
-                    property: "id",
-                    formula: {
-                        string: {
-                            equals: context.query.id.replace(/\-/g, ""),
-                        },
-                    },
-                },
-            ],
-        },
-    });
-
+export function getServerSideProps(context) {
     return {
-        props: {
-            data: response,
-        },
+        props: { params: context.params },
     };
 }

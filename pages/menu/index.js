@@ -1,31 +1,8 @@
-import { getDatabase, MENU_DATABASE_ID } from "../../lib/notion";
+import useDatabase from "../../hook/useDatabase";
 import MenuList from "../../components/menu";
 
-export default function MenuPage({ data }) {
-    return (
-        <div className="app">
-            <MenuList data={data} />
-        </div>
-    );
-}
+export default function MenuPage() {
+    const { data, loading, error } = useDatabase("/api/menu/");
 
-export async function getServerSideProps() {
-    const response = await getDatabase(MENU_DATABASE_ID, {
-        sorts: [
-            {
-                property: "index",
-                direction: "ascending",
-            },
-            {
-                property: "write_date",
-                direction: "descending",
-            },
-        ],
-    });
-
-    return {
-        props: {
-            data: response,
-        },
-    };
+    return <div className="app">{loading ? <div className="super-loading">메뉴를 가져오고 있습니다.</div> : <MenuList data={data} />}</div>;
 }
