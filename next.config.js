@@ -6,6 +6,15 @@ const nextConfig = {
             ssr: true,
         },
     },
+    async redirects() {
+        return [
+            {
+                source: "/",
+                destination: "/menu",
+                permanent: true,
+            },
+        ];
+    },
 };
 
 module.exports = nextConfig;
