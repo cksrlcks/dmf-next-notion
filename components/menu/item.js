@@ -1,9 +1,11 @@
 import Link from "next/link";
 import Badge from "../badge";
+import Thumbnail from "../thumbnail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 
 export default function MenuItem({ product, styles }) {
+    console.log(product.properties.cover_img);
     return (
         <li className={styles["list-item"]}>
             <Link href={`/menu/${product.id}`}>
@@ -12,7 +14,7 @@ export default function MenuItem({ product, styles }) {
                 </div>
                 <figure className={`${styles["item-img"]} ${product.properties.sold_out.status.name === "품절" ? styles.soldOut : ""}`}>
                     {product.properties.cover_img?.files?.length ? (
-                        <img src={product.properties.cover_img.files[0]?.file.url} alt="" />
+                        <Thumbnail url={product.properties.cover_img.files[0]?.name} size={"c_fill,h_440,w_440"} />
                     ) : (
                         <div className={styles["no-img"]}>
                             <FontAwesomeIcon icon={faPaw} />

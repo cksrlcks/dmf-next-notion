@@ -87,6 +87,8 @@
     margin-top: -0.5em;
 }
 .ingredients .ingredientsList {
+    display: flex;
+    gap: 4px;
 }
 .ingredients .ingredientsList li {
     min-width: 3em;

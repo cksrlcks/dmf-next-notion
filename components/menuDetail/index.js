@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Badge from "../badge";
+import Thumbnail from "../thumbnail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faPaw } from "@fortawesome/free-solid-svg-icons";
 import styles from "./style.module.css";
@@ -11,7 +12,7 @@ export default function Detail({ item }) {
         <div className={styles.productView}>
             <div className={styles.viewLeft}>
                 {item.properties.cover_img?.files?.length ? (
-                    <img src={item.properties.cover_img.files[0]?.file.url} alt="" />
+                    <Thumbnail url={item.properties.cover_img.files[0]?.name} size={"c_fill,h_1000,w_1000"} />
                 ) : (
                     <div className={styles["no-img"]}>
                         <FontAwesomeIcon icon={faPaw} />
@@ -25,7 +26,7 @@ export default function Detail({ item }) {
                 <section className={styles.productSummary}>
                     <section className={styles.mobileImg}>
                         {item.properties.cover_img?.files?.length ? (
-                            <img src={item.properties.cover_img.files[0]?.file.url} alt="" />
+                            <Thumbnail url={item.properties.cover_img.files[0]?.name} size={"c_fill,h_1000,w_1000"} />
                         ) : (
                             <div className={styles["no-img"]}>
                                 <FontAwesomeIcon icon={faPaw} />
