@@ -1,22 +1,36 @@
-import { Autoplay, EffectFade } from "swiper";
+import SwiperCore, { Autoplay, Parallax } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/effect-fade";
 import Thumbnail from "../thumbnail";
 import styles from "./style.module.css";
 
 function shuffle(array) {
     return array.sort(() => Math.random() - 0.5);
 }
+
+const SwiperConfig = {
+    speed: 3000,
+    autoplay: {
+        delay: 5,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+    },
+    loop: true,
+    slidesPerView: "auto",
+    watchSlidesProgress: true,
+    spaceBetween: 20,
+    grabCursor: false,
+    allowTouchMove: false,
+};
+SwiperCore.use([Autoplay, Parallax]);
 export default function Show({ menu, autoTime }) {
     const showItems = menu.filter((item) => item.properties.cover_img?.files?.length);
     return (
         <div className={styles.slideWrapper}>
-            <Swiper modules={[Autoplay, EffectFade]} autoplay={{ delay: autoTime }} effect={"fade"} allowTouchMove={false}>
+            <Swiper {...SwiperConfig}>
                 {shuffle(showItems).map((item) => (
                     <SwiperSlide key={item.id} className={styles["swiper-slide"]}>
-                        <Thumbnail url={item.properties.cover_img.files[0]?.name} size={"c_fill,h_700,w_700"} />
-                        <Thumbnail url={item.properties.cover_img.files[0]?.name} size={"c_fill,h_700,w_700"} />
+                        <Thumbnail url={item.properties.cover_img.files[0]?.name} size={"h_800,w_800,r_12"} />
                     </SwiperSlide>
                 ))}
             </Swiper>
