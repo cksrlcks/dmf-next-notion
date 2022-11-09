@@ -12,7 +12,7 @@ export default function Detail({ item }) {
         <div className={styles.productView}>
             <div className={styles.viewLeft}>
                 {item.properties.cover_img?.files?.length ? (
-                    <Thumbnail url={item.properties.cover_img.files[0]?.name} size={"c_fill,h_1000,w_1000"} />
+                    <Thumbnail url={item.properties.cover_img.files[0]?.name} size={"c_fill,h_500,w_500/q_60"} />
                 ) : (
                     <div className={styles["no-img"]}>
                         <FontAwesomeIcon icon={faPaw} />
@@ -26,7 +26,7 @@ export default function Detail({ item }) {
                 <section className={styles.productSummary}>
                     <section className={styles.mobileImg}>
                         {item.properties.cover_img?.files?.length ? (
-                            <Thumbnail url={item.properties.cover_img.files[0]?.name} size={"c_fill,h_1000,w_1000"} />
+                            <Thumbnail url={item.properties.cover_img.files[0]?.name} size={"c_fill,h_500,w_500/q_60"} />
                         ) : (
                             <div className={styles["no-img"]}>
                                 <FontAwesomeIcon icon={faPaw} />

@@ -2,7 +2,13 @@ import useDatabase from "../../hook/useDatabase";
 import MenuList from "../../components/menu";
 
 export default function MenuPage() {
-    const { data, loading, error } = useDatabase("/api/menu/");
+    const { data, error } = useDatabase("/api/menu/");
 
-    return <div className="app">{loading ? <div className="super-loading">메뉴를 가져오고 있습니다.</div> : <MenuList data={data} />}</div>;
+    if (error) return <div className="super-loading">데이터를 가져오는데 실패했습니다.</div>;
+    if (!data) return <div className="super-loading">메뉴를 가져오고 있습니다.</div>;
+    return (
+        <div className="app">
+            <MenuList data={data} />
+        </div>
+    );
 }

@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 
 export default function MenuItem({ product, styles }) {
-    console.log(product.properties.cover_img);
     return (
         <li className={styles["list-item"]}>
             <Link href={`/menu/${product.id}`}>
