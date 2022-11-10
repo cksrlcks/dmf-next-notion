@@ -1,26 +1,15 @@
 import styles from "./style.module.css";
 
+const colorSet = {
+    추천: "rec",
+    인기: "popular",
+    신규: "new",
+    온라인전용: "online",
+};
+
 export default function Badge({ badges }) {
     function getColorName(string) {
-        if (!string) return "";
-        let badgeString = "";
-        switch (string) {
-            case "추천":
-                badgeString = "rec";
-                break;
-            case "인기":
-                badgeString = "popular";
-                break;
-            case "신규":
-                badgeString = "new";
-                break;
-            case "온라인전용":
-                badgeString = "online";
-                break;
-            default:
-                badgeString = "";
-        }
-        return badgeString;
+        return colorSet[string] ? colorSet[string] : "";
     }
 
     return (
