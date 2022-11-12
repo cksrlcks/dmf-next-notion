@@ -161,9 +161,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .menu-list {
-        gap: 3rem 1rem;
-    }
     .list-item {
         width: calc(50% - 2rem);
     }
