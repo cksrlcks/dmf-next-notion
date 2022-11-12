@@ -5,14 +5,14 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
-    const [autoTime, setAutoTime] = useState(2000);
+    const [autoTime, setAutoTime] = useState(3000);
     const changeSlideShowTime = function (time) {
         setAutoTime(time);
         localStorage.setItem("dmfShowPlayTime", time);
     };
     useEffect(() => {
         const initalTime = localStorage.getItem("dmfShowPlayTime");
-        setAutoTime(initalTime ? initalTime : 2000);
+        setAutoTime(initalTime ? initalTime : 3000);
     }, []);
     return (
         <>

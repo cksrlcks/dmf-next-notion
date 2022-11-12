@@ -5,7 +5,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 4px;
 }
 .settingBtn {
     display: flex;
@@ -19,6 +18,9 @@
     box-shadow: 0 0 10px rgba(58, 60, 81, 0.105);
     font-size: 1.5rem;
 }
+.settingBtn + .settingBtn {
+    margin-top: 4px;
+}
 .settingBtn .label {
     font-size: 1.5rem;
     font-weight: 600;
@@ -27,7 +29,6 @@
 
 .settingBtn .controls {
     display: flex;
-    gap: 3px;
 }
 .settingBtn .controls input {
     display: none;
@@ -46,7 +47,10 @@
     border-radius: 4px;
     cursor: pointer;
 }
-.settingBtn .controlBtn:has(input:checked) {
+.settingBtn label + label {
+    margin-left: 3px;
+}
+.settingBtn input:checked ~ .controlBtn {
     background: #5c16c520;
     color: #5c16c5;
     border: 1px solid #5c16c5;

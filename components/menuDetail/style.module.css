@@ -68,12 +68,13 @@
 .ingredients {
     display: flex;
     align-items: center;
-    gap: 3rem;
 }
 .ingredients .ingredientLabel {
     position: relative;
     font-size: 1.4rem;
     font-weight: 500;
+    padding-right: 1.5rem;
+    margin-right: 1.5rem;
 }
 .ingredients .ingredientLabel:after {
     content: "";
@@ -82,13 +83,12 @@
     height: 1em;
     background: #ddd;
     position: absolute;
-    right: -1.5rem;
+    right: 0;
     top: 50%;
     margin-top: -0.5em;
 }
 .ingredients .ingredientsList {
     display: flex;
-    gap: 4px;
 }
 .ingredients .ingredientsList li {
     min-width: 3em;
@@ -103,6 +103,7 @@
     padding: 4px 6px;
     border-radius: 5px;
     border: 1px solid #e9504d;
+    margin: 0 4px 3px 0;
 }
 .price {
     text-align: right;
@@ -119,7 +120,7 @@
 }
 .btnWrapper {
     display: flex;
-    gap: 4px;
+    margin: -4px 0 0 -4px;
 }
 .storeBtn {
     width: 100%;
@@ -134,6 +135,7 @@
     letter-spacing: -0.03em;
     font-size: 1.7rem;
     border-radius: 4px;
+    margin: 4px 0 0 4px;
 }
 
 .contactBtn {
@@ -149,6 +151,7 @@
     letter-spacing: -0.03em;
     font-size: 1.7rem;
     border-radius: 4px;
+    margin: 4px 0 0 4px;
 }
 
 .itemBadge {

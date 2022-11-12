@@ -19,17 +19,17 @@ export default function Setting({ changeSlideShowTime, autoTime }) {
             <div className={styles.settingBtn}>
                 <div className={styles.label}>자동재생 속도</div>
                 <div className={styles.controls}>
+                    <label>
+                        <input type="radio" value="5000" name="speed" onChange={handleTime} defaultChecked={autoTime == 5000} />
+                        <span className={styles.controlBtn}>느리게</span>
+                    </label>
+                    <label className={styles.controlBtn}>
+                        <input type="radio" value="3000" name="speed" onChange={handleTime} defaultChecked={autoTime == 3000} />
+                        <span className={styles.controlBtn}>보통</span>
+                    </label>
                     <label className={styles.controlBtn}>
                         <input type="radio" value="2000" name="speed" onChange={handleTime} defaultChecked={autoTime == 2000} />
-                        2초
-                    </label>
-                    <label className={styles.controlBtn}>
-                        <input type="radio" value="4000" name="speed" onChange={handleTime} defaultChecked={autoTime == 4000} />
-                        4초
-                    </label>
-                    <label className={styles.controlBtn}>
-                        <input type="radio" value="6000" name="speed" onChange={handleTime} defaultChecked={autoTime == 6000} />
-                        6초
+                        <span className={styles.controlBtn}>빠르게</span>
                     </label>
                 </div>
             </div>

@@ -8,22 +8,23 @@ function shuffle(array) {
     return array.sort(() => Math.random() - 0.5);
 }
 
-const SwiperConfig = {
-    speed: 3000,
-    autoplay: {
-        delay: 5,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: false,
-    },
-    loop: true,
-    slidesPerView: "auto",
-    watchSlidesProgress: true,
-    spaceBetween: 20,
-    grabCursor: false,
-    allowTouchMove: false,
-};
 SwiperCore.use([Autoplay, Parallax]);
 export default function Show({ menu, autoTime }) {
+    const SwiperConfig = {
+        speed: +autoTime,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+        },
+        loop: true,
+        slidesPerView: "auto",
+        watchSlidesProgress: true,
+        spaceBetween: 20,
+        grabCursor: false,
+        allowTouchMove: false,
+    };
+
     const showItems = menu.filter((item) => item.properties.cover_img?.files?.length);
     return (
         <div className={styles.slideWrapper}>
