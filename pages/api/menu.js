@@ -1,4 +1,4 @@
-import { getDatabase, MENU_DATABASE_ID } from "../../lib/notion";
+import notion, { MENU_DATABASE_ID } from "../../lib/notion";
 
 export default async function handler(req, res) {
     if (req.method !== "POST") {
@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        const response = await getDatabase(MENU_DATABASE_ID, {
+        const response = await notion.getDatabase(MENU_DATABASE_ID, {
             sorts: [
                 {
                     property: "index",
@@ -21,5 +21,6 @@ export default async function handler(req, res) {
         res.status(200).json({ response });
     } catch (error) {
         res.status(500).json({ error });
+        console.log(error);
     }
 }

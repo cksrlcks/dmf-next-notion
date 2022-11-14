@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faPaw } from "@fortawesome/free-solid-svg-icons";
 import styles from "./style.module.css";
 export default function Detail({ item }) {
-    console.log(item.properties.ingredient?.multi_select);
     const router = useRouter();
     return (
         <div className={styles.productView}>
@@ -45,7 +44,7 @@ export default function Detail({ item }) {
                     <div className={styles.ingredientLabel}>주원료</div>
                     <ul className={styles.ingredientsList}>
                         {item.properties.ingredient?.multi_select.map((item) => (
-                            <li>{item.name}</li>
+                            <li key={item.id}>{item.name}</li>
                         ))}
                     </ul>
                 </section>

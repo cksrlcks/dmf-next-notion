@@ -1,4 +1,4 @@
-import { createContact } from "../../lib/notion";
+import notion from "../../lib/notion";
 
 export default async function handler(req, res) {
     if (req.method !== "POST") {
@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     }
     try {
         const { name, phone, email, content } = JSON.parse(req.body);
-        await createContact({ name, phone, email, content });
+        await notion.createContact({ name, phone, email, content });
         res.status(201).json({ msg: "Success" });
     } catch (error) {
         res.status(500).json({ msg: "There was an error" });

@@ -1,4 +1,4 @@
-import { getDatabase, MENU_DATABASE_ID } from "../../../lib/notion";
+import notion, { MENU_DATABASE_ID } from "../../../lib/notion";
 
 export default async function handler(req, res) {
     const { id } = req.query;
@@ -6,7 +6,7 @@ export default async function handler(req, res) {
         return res.status(405).json({ message: `${req.method} requests are not allowed` });
     }
     try {
-        const response = await getDatabase(MENU_DATABASE_ID, {
+        const response = await notion.getDatabase(MENU_DATABASE_ID, {
             filter: {
                 or: [
                     {
