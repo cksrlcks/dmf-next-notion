@@ -164,7 +164,7 @@
     display: none;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
     .productView {
         height: 100%;
     }
@@ -208,6 +208,10 @@
         left: 0;
         top: 0;
         width: 100%;
+    }
+
+    .goBack {
+        display: none;
     }
 }
 @media screen and (max-width: 768px) {
