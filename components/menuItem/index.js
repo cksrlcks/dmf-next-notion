@@ -3,11 +3,12 @@ import Badge from "../badge";
 import Thumbnail from "../thumbnail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
+import styles from "./style.module.css";
 
-export default function MenuItem({ product, styles }) {
+export default function MenuItem({ product, link }) {
     return (
         <li className={styles["list-item"]}>
-            <Link href={`/menu/${product.id}`}>
+            <Link href={`/menu/${product.id}`} className={link !== undefined && !link && styles.disabled}>
                 <div className={styles["item-badge"]}>
                     <Badge badges={product.properties.badge?.multi_select} />
                 </div>

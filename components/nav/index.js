@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlay, faBone, faPaperPlane, faGear, faG } from "@fortawesome/free-solid-svg-icons";
+import { faCirclePlay, faBone, faPaperPlane, faGear, faList } from "@fortawesome/free-solid-svg-icons";
 import storeIcon from "../../public/assets/img/store-icon.svg";
 import styles from "./style.module.css";
 const Nav = () => {
@@ -10,7 +10,7 @@ const Nav = () => {
     return (
         <nav className={styles.nav}>
             <Link href="/setting" legacyBehavior>
-                <a className={`${pathname?.includes("/setting") ? styles.active : ""} ${styles.setting}`}>
+                <a className={`${pathname?.includes("/setting") ? styles.active : ""} ${styles.setting}`} title="설정">
                     <FontAwesomeIcon icon={faGear} />
                     <span className="a11y">설정</span>
                 </a>
@@ -18,7 +18,7 @@ const Nav = () => {
             <ul>
                 <li>
                     <Link href="/menu" legacyBehavior>
-                        <a className={pathname?.includes("/menu") ? styles.active : ""}>
+                        <a className={pathname?.includes("/menu") ? styles.active : ""} title="전체메뉴">
                             <FontAwesomeIcon icon={faBone} />
                             <span className="a11y">메뉴</span>
                         </a>
@@ -26,7 +26,7 @@ const Nav = () => {
                 </li>
                 <li>
                     <Link href="/show" legacyBehavior>
-                        <a className={pathname?.includes("/show") ? styles.active : ""}>
+                        <a className={pathname?.includes("/show") ? styles.active : ""} title="슬라이드쇼">
                             <FontAwesomeIcon icon={faCirclePlay} />
                             <span className="a11y">슬라이드쇼</span>
                         </a>
@@ -34,9 +34,17 @@ const Nav = () => {
                 </li>
                 <li>
                     <Link href="/contact" legacyBehavior>
-                        <a className={pathname?.includes("/contact") ? styles.active : ""}>
+                        <a className={pathname?.includes("/contact") ? styles.active : ""} title="문의">
                             <FontAwesomeIcon icon={faPaperPlane} />
                             <span className="a11y">문의</span>
+                        </a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/board" legacyBehavior>
+                        <a className={pathname?.includes("/board") ? styles.active : ""} title="페이징 연습">
+                            <FontAwesomeIcon icon={faList} />
+                            <span className="a11y">페이징 연습</span>
                         </a>
                     </Link>
                 </li>

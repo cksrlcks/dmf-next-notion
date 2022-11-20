@@ -33,7 +33,7 @@ export default function DetailView() {
                     <FontAwesomeIcon icon={faArrowLeft} />
                 </button>
             </header>
-            <Detail item={data[0]} />
+            <Detail item={data.results[0]} />
         </>
     );
 }

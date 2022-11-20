@@ -1,8 +1,9 @@
 import useSWR from "swr";
 
-const fetcher = (url) =>
+const fetcher = (url, option) =>
     fetch(url, {
         method: "POST",
+        ...option,
     })
         .then((r) => r.json())
         .then((data) => data.response);

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Tab from "./tab";
-import MenuItem from "./item";
+import MenuItem from "../menuItem";
 import styles from "./style.module.css";
 
 export default function MenuList({ data }) {
@@ -22,7 +22,7 @@ export default function MenuList({ data }) {
             <Tab styles={styles} handleTab={changeCategory} currentTab={currentTab} data={data} />
             <ul className={styles["menu-list"]}>
                 {menus.map((item) => {
-                    return <MenuItem product={item} key={item.id} styles={styles} />;
+                    return <MenuItem product={item} key={item.id} />;
                 })}
             </ul>
         </div>
