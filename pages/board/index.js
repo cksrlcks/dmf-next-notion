@@ -11,9 +11,13 @@ export default function Board() {
 
     useEffect(() => {
         if (data) {
-            setList((prev) => {
-                return [...prev, ...data.results];
-            });
+            if (nextCursor) {
+                setList((prev) => {
+                    return [...prev, ...data.results];
+                });
+            } else {
+                setList(data.results);
+            }
 
             setHasMore(data.has_more);
         }
