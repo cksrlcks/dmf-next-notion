@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { motion } from "framer-motion";
 import Badge from "../badge";
 import Thumbnail from "../thumbnail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,7 +8,7 @@ import styles from "./style.module.css";
 
 export default function MenuItem({ product, link }) {
     return (
-        <li className={styles["list-item"]}>
+        <motion.li layout animate={{ opacity: 1 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }} className={styles["list-item"]}>
             <Link href={`/menu/${product.id}`} className={link !== undefined && !link && styles.disabled}>
                 <div className={styles["item-badge"]}>
                     <Badge badges={product.properties.badge?.multi_select} />
@@ -31,7 +32,7 @@ export default function MenuItem({ product, link }) {
                 </div>
                 <div className={styles["item-content"]}>{product.properties.menu_description?.rich_text[0]?.plain_text}</div>
             </Link>
-        </li>
+        </motion.li>
     );
 }
 

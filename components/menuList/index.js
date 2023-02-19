@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Tab from "./tab";
 import MenuItem from "../menuItem";
 import styles from "./style.module.css";
@@ -18,11 +19,13 @@ export default function MenuList({ data }) {
     return (
         <div>
             <Tab styles={styles} filters={filters} filter={filter} onFilterChange={setFilter} data={data} />
-            <ul className={styles["menu-list"]}>
-                {filtered.map((item) => {
-                    return <MenuItem product={item} key={item.id} />;
-                })}
-            </ul>
+            <motion.ul layout className={styles["menu-list"]}>
+                <AnimatePresence>
+                    {filtered.map((item) => {
+                        return <MenuItem product={item} key={item.id} />;
+                    })}
+                </AnimatePresence>
+            </motion.ul>
         </div>
     );
 }
